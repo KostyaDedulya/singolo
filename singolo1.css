@@ -1,8 +1,4 @@
 @import url("fonts.css");
-* {
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: 'Lato', Helvetica, sans-serif;
@@ -32,8 +28,7 @@ section {
 }
 
 .logo {
-  padding-top: 36px;
-  line-height: 12px;
+  padding-top: 2px;
 }
 
 .logo__link {
@@ -51,7 +46,7 @@ section {
 
 .menu {
   display: flex;
-  padding-top: 46px;
+  padding-top: 30px;
 }
 
 .menu__list {
@@ -194,21 +189,21 @@ section {
 }
 
 .services {
-  height: 435px;
-  padding-top: 59px;
+  height: 459px;
+  padding-top: 35px;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
 }
 
 .services__title {
+  margin-bottom: 18px;
   font-size: 30px;
   font-family: 'Lato Black', Helvetica, sans-serif;
   color: #666d89;
 }
 
 .services__description {
-  padding-top: 17px;
-  margin-bottom: 14px;
+  margin-bottom: 27px;
   font-size: 16px;
   font-family: 'Lato Light', Helvetica, sans-serif;
   color: #767e9e;
@@ -226,8 +221,9 @@ section {
   display: flex;
   width: 299px;
   padding-left: 1px;
-  padding-top: 28px;
-  margin-right: 19px;
+  padding-top: 14.5px;
+  padding-bottom: 3px;
+  margin-right: 20px;
 }
 
 .service:nth-child(3n) {
@@ -237,7 +233,7 @@ section {
 .service__img {
   align-self: flex-start;
   margin-right: 20px;
-  margin-top: 5px;
+  margin-top: 4px;
   padding: 11px;
   width: 33px;
   height: 33px;
@@ -245,7 +241,8 @@ section {
   border-radius: 50%;
 }
 
-.service__title {
+.service__title {  
+  margin: 0px;
   font-family: 'Lato Black', Helvetica, sans-serif;
   color: #666d89;
   word-spacing: -1px;
@@ -253,11 +250,11 @@ section {
 }
 
 .service:nth-child(3n) .service__title {
-  letter-spacing: -0px;
+  letter-spacing: -0.2px;
 }
 
 .service__text {
-  padding-top: 9px;
+  margin-top: 9px;
   color: #767e9e;
   font-size: 12px;
   letter-spacing: -0.5px;
