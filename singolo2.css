@@ -149,6 +149,9 @@ section {
     font-size: 19px;
     color: #666d89;
     letter-spacing: -0.019em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .team__member:first-child .team__member__name {
