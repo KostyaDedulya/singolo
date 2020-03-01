@@ -1,5 +1,6 @@
 @import url("./fonts.css");
 
+
 body {
     font-family: 'Lato', Helvetica, sans-serif;
 }
@@ -27,14 +28,14 @@ section {
     font-size: 31px;
     color: #666d89;
     font-family: 'Lato Black', Helvetica, sans-serif;
-    letter-spacing: -0.7px;
+    letter-spacing: -0.02em;
 }
 
 .portfolio__text {
     margin-bottom: 0;
     font-size: 18px;
     color: #767e9e;
-    letter-spacing: -0.22px;
+    letter-spacing: -0.014em;
 }
 
 .portfolio__filter {
@@ -54,7 +55,7 @@ section {
     padding-bottom: 4.5px;
     font-size: 11px;
     color: #767e9e;
-    letter-spacing: 0.37px;
+    letter-spacing: 0.036em;
     border: 1px solid #666d89;
     border-radius: 5px;
     cursor: pointer;
@@ -106,7 +107,8 @@ section {
     font-size: 30px;
     font-family: 'Lato Black', Helvetica, sans-serif;
     color: #666d89;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.01rem;
+    text-rendering: optimizeLegibility;
 }
 
 .about-us__text {
@@ -115,7 +117,6 @@ section {
     color: #767e9e;
     line-height: 30px;
     text-align: justify;
-    letter-spacing: 0.41px;
 }
 
 .column-3-layout {
@@ -147,7 +148,7 @@ section {
     margin-top: 11.8px;
     font-size: 19px;
     color: #666d89;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.019em;
 }
 
 .team__member:first-child .team__member__name {
@@ -160,10 +161,11 @@ section {
     color: #767e9e;
     text-align: justify;
     line-height: 21px;
+    letter-spacing: -0.007em;
 }
 
 .team__member:first-child .team__member__description {
-    letter-spacing: -0.07px;
+    letter-spacing: -0.01em;
 }
 
 .socials {
