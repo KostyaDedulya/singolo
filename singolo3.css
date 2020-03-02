@@ -1,0 +1,16 @@
+@import url("./fonts.css");
+
+
+body {
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+section {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+}
