@@ -539,6 +539,39 @@ input[type="email"]::placeholder {
   font-size: 12px;
 }
 
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid {
+  background-color: #d64a42;
+}
+
+.contacts__form__message {
+  display: block;
+  width: 96%;
+  margin-bottom: 16px;
+  padding: 10px 14px 35px;
+  background-color: #d6564f;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #f08688;
+  resize: none;
+}
+
+.contacts__form__submit {
+  padding: 5px 15px;
+  background-color: transparent;
+  border: 2px solid #f0d8d9;
+  border-radius: 5px;
+  color: #f0d8d9;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contacts__form__submit:hover {
+  border-color: #d6564f;
+  color: #d6564f;
+}
+
 .contacts__information {
   width: 300px;
 }
@@ -632,34 +665,6 @@ input[type="email"]::placeholder {
   background-repeat: no-repeat;
 }
 
-.contacts__form__message {
-  display: block;
-  width: 96%;
-  margin-bottom: 16px;
-  padding: 10px 14px 35px;
-  background-color: #d6564f;
-  border: none;
-  border-radius: 5px;
-  font-size: 12px;
-  color: #f08688;
-  resize: none;
-}
-
-.contacts__form__submit {
-  padding: 5px 15px;
-  background-color: transparent;
-  border: 2px solid #f0d8d9;
-  border-radius: 5px;
-  color: #f0d8d9;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.contacts__form__submit:hover {
-  border-color: #d6564f;
-  color: #d6564f;
-}
-
 .footer {
   height: 76px;
   display: flex;
@@ -724,15 +729,15 @@ input[type="email"]::placeholder {
     letter-spacing: -0.5px;
   }
 
-  .contacts__form__message{
+  .contacts__form__message {
     padding: 12px 15px 5px;
   }
 
-  .contacts__information__text{
+  .contacts__information__text {
     margin-bottom: 24px;
   }
 
-  .socials__footer{
+  .socials__footer {
     padding-top: 6px;
   }
 }
