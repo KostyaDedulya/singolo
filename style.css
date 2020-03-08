@@ -553,7 +553,7 @@ input[type="email"]:focus:invalid {
   border: none;
   border-radius: 5px;
   font-size: 12px;
-  color: #f08688;
+  color: #e87878;
   resize: none;
 }
 
@@ -731,10 +731,24 @@ input[type="email"]:focus:invalid {
 
   .contacts__form__message {
     padding: 12px 15px 5px;
+    color: #e06865;
+    letter-spacing: -0.2px;
   }
 
   .contacts__information__text {
     margin-bottom: 24px;
+  }
+
+  .contacts__information__address {
+    letter-spacing: -0.25px;
+  }
+
+  .contacts__information__phone {
+    letter-spacing: -0.1px;
+  }
+
+  .contacts__information__mail {
+    letter-spacing: -0.35px;
   }
 
   .socials__footer {
