@@ -18,29 +18,36 @@
       <nav class="menu">
         <ul class="menu__list">
           <li class="menu__item"><a href="#" class="menu__link  menu_active">Home</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Services</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Portfolio</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">About</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+          <li class="menu__item"><a href="#services" class="menu__link">Services</a></li>
+          <li class="menu__item"><a href="#portfolio" class="menu__link">Portfolio</a></li>
+          <li class="menu__item"><a href="#about-us" class="menu__link">About</a></li>
+          <li class="menu__item"><a href="#contacts" class="menu__link">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="slider">
+      <section class="slider" id="slider">
         <div class="slider__button slider__button_left"></div>
-        <div class="phone phone_vertical">
-          <img src="./assets/img/slider/Cam1.png" alt="iphone">
-          <div class="phone__display"></div>
-          <div class="phone__shadow"></div>
+        <div class="slider__container">
+          <div class="slider__item slider__first">
+            <div class="phone phone_vertical">
+              <img src="./assets/img/slider/Cam1.png" alt="iphone">
+              <div class="phone__display phone__display_showed"></div>
+              <div class="phone__shadow"></div>
+            </div>
+            <div class="phone phone_horizontal">
+              <img src="./assets/img/slider/Cam1.png" alt="iphone">
+              <div class="phone__display phone__display_showed"></div>
+              <div class="phone__shadow"></div>
+            </div>
+          </div>
+          <div class="slider__item slider__second">
+            <div class="slider__second__image"></div>
+          </div>
         </div>
-        <div class="phone phone_horizontal">
-          <img src="./assets/img/slider/Cam1.png" alt="iphone">
-          <div class="phone__display"></div>
-          <div class="phone__shadow"></div>
-        </div>
-        <div class="slider__button slider__button_right"></span></div>
+        <div class="slider__button slider__button_right"></div>
       </section>
-      <section class="services">
+      <section class="services" id="services">
         <h2 class="services__title">Our Services</h2>
         <p class="services__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
           mollis,
@@ -110,7 +117,7 @@
           </div>
         </div>
       </section>
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
         <h2 class="portfolio__title">Portfolio</h2>
         <p class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
           odio sem nec elit.</p>
@@ -121,33 +128,33 @@
           <li class="portfolio__filter__tag">Artwork</li>
         </ul>
         <div class="column-4-layout portfolio__layout">
-          <img src="./assets/img/portfolio/Project 1.png" alt="Project 1" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project1.png" alt="Project 1" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 2.png" alt="Project 2" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project2.png" alt="Project 2" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 3.png" alt="Project 3" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project3.png" alt="Project 3" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 4.png" alt="Project 4" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project4.png" alt="Project 4" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 5.png" alt="Project 5" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project5.png" alt="Project 5" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 6.png" alt="Project 6" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project6.png" alt="Project 6" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 7.png" alt="Project 7" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project7.png" alt="Project 7" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 8.png" alt="Project 8" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project8.png" alt="Project 8" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 9.png" alt="Project 9" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project9.png" alt="Project 9" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 10.png" alt="Project 10" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project10.png" alt="Project 10" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 11.png" alt="Project 11" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project11.png" alt="Project 11" class="portfolio__item" width="220"
             height="187">
-          <img src="./assets/img/portfolio/Project 12.png" alt="Project 12" class="portfolio__item" width="220"
+          <img src="./assets/img/portfolio/Project12.png" alt="Project 12" class="portfolio__item" width="220"
             height="187">
         </div>
       </section>
-      <section class="about-us">
+      <section class="about-us" id="about-us">
         <h2 class="about-us__title">About Us</h2>
         <p class="about-us__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
           mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce
@@ -155,7 +162,7 @@
         <div class="team">
           <div class="column-3-layout">
             <div class="team__member">
-              <img src="./assets/img/about-us/adam jensen.png" alt="Adam Jensen" class="team__member__photo" width="300"
+              <img src="./assets/img/about-us/adam_jensen.png" alt="Adam Jensen" class="team__member__photo" width="300"
                 height="300">
               <h4 class="team__member__name">Adam Jensen</h4>
               <p class="team__member__description">Quisque luctus, quam eget molestie commodo, lacus purus
@@ -163,30 +170,30 @@
               <div class="socials">
                 <ul class="socials__icons">
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_facebook"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_google-plus"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class=" socials__button">
+                    <div class=" socials__button">
                       <div class="socials__icon socials__icon_twitter"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button ">
+                    <div class="socials__button ">
                       <div class="socials__icon socials__icon_linkedin"></div>
-                    </button>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="team__member">
-              <img src="./assets/img/about-us/desmond miles.png" alt="Desmond Miles" class="team__member__photo"
+              <img src="./assets/img/about-us/desmond_miles.png" alt="Desmond Miles" class="team__member__photo"
                 width="300" height="300">
               <h4 class="team__member__name">Desmond Miles</h4>
               <p class="team__member__description">Curabitur vestibulum eget mauris quis laoreet.
@@ -194,30 +201,30 @@
               <div class="socials">
                 <ul class="socials__icons">
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_facebook"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_google-plus"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class=" socials__button">
+                    <div class=" socials__button">
                       <div class="socials__icon socials__icon_twitter"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button ">
+                    <div class="socials__button ">
                       <div class="socials__icon socials__icon_linkedin"></div>
-                    </button>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="team__member">
-              <img src="./assets/img/about-us/scolara visari.png" alt="Scolara Visari" class="team__member__photo"
+              <img src="./assets/img/about-us/scolara_visari.png" alt="Scolara Visari" class="team__member__photo"
                 width="300" height="300">
               <h4 class="team__member__name">Scolara Visari</h4>
               <p class="team__member__description">Nulla sed nunc et tortor luctus faucibus. Morbi at
@@ -225,24 +232,24 @@
               <div class="socials">
                 <ul class="socials__icons">
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_facebook"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button">
+                    <div class="socials__button">
                       <div class="socials__icon socials__icon_google-plus"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class=" socials__button">
+                    <div class=" socials__button">
                       <div class="socials__icon socials__icon_twitter"></div>
-                    </button>
+                    </div>
                   </li>
                   <li>
-                    <button class="socials__button ">
+                    <div class="socials__button ">
                       <div class="socials__icon socials__icon_linkedin"></div>
-                    </button>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -250,18 +257,19 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <h2 class="contacts__title">Get a Quote</h2>
         <p class="contacts__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
           mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce
           dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <div class="column-2-layout">
           <form action="#" class="contacts__form">
-            <input class="contacts__form__name" type="text" name="name" placeholder="Name (Required)" pattern="[a-zA-Zа-яА-Я]*" required>
+            <input class="contacts__form__name" type="text" name="name" placeholder="Name (Required)"
+              pattern="[a-zA-Zа-яА-Я]*" required>
             <input class="contacts__form__mail" type="email" name="mail" placeholder="Email (Required)" required>
             <input class="contacts__form__subject" type="text" name="subject" placeholder="Subject">
-            <textarea class="contacts__form__message" name="message" cols="30"
-              rows="12">Describe your project in detail...</textarea>
+            <textarea class="contacts__form__message" name="message" cols="30" rows="12"
+              placeholder="Describe your project in detail..."></textarea>
             <input class="contacts__form__submit" type="submit" value="Submit">
           </form>
           <div class="contacts__information">
@@ -281,29 +289,30 @@
       <div class="socials socials__footer">
         <ul class="socials__icons">
           <li>
-            <button class="socials__button">
+            <div class="socials__button">
               <div class="socials__icon socials__icon_facebook"></div>
-            </button>
+            </div>
           </li>
           <li>
-            <button class="socials__button">
+            <div class="socials__button">
               <div class="socials__icon socials__icon_google-plus"></div>
-            </button>
+            </div>
           </li>
           <li>
-            <button class=" socials__button">
+            <div class=" socials__button">
               <div class="socials__icon socials__icon_twitter"></div>
-            </button>
+            </div>
           </li>
           <li>
-            <button class="socials__button">
+            <div class="socials__button">
               <div class="socials__icon socials__icon_linkedin"></div>
-            </button>
+            </div>
           </li>
         </ul>
       </div>
     </footer>
   </div>
+  <script src="./script.js"></script>
 </body>
 
 </html>
