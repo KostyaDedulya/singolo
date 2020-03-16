@@ -90,6 +90,7 @@ const closeModal = (modal) => {
 }
 
 const addSliderHandler = () => {
+  let isEnabled = true;
   const slides = Array.from(document.querySelectorAll('.slider__item'));
   const leftArrow = document.querySelector('.slider__button_left');
   const rightArrow = document.querySelector('.slider__button_right');
@@ -98,20 +99,24 @@ const addSliderHandler = () => {
   let currentSlide = 0;
   let position = 0;
   leftArrow.addEventListener('click', (event) => {
-    currentSlide = slideTransform('left', currentSlide, slides);
+    if(!isEnabled) return false;
+    isEnabled = false;
+    currentSlide = slideTransform('left', currentSlide, slides);    
   })
   rightArrow.addEventListener('click', (event) => {
+    if(!isEnabled) return false;
+    isEnabled = false;
     currentSlide = slideTransform('right', currentSlide, slides);
   })
 
   const slideTransform = (direction, currentSlide, slides) => {    
-    if (direction === 'left') {
+    if (direction === 'left') {      
       position--;
       if (currentSlide - 1 < 0) currentSlide = slides.length - 1;
       else currentSlide = currentSlide - 1;
       slides[currentSlide].style.transform = `translateX(${(-position)* step - currentSlide * step}px)`
       sliderContainer.style.transform = `translateX(${position * step}px)`
-
+      setTimeout(() => isEnabled = true, 600);
     }
     if (direction === 'right') {
       position++;
@@ -119,6 +124,7 @@ const addSliderHandler = () => {
       else currentSlide = currentSlide + 1;
       slides[currentSlide].style.transform = `translateX(${(-position)* step - currentSlide * step}px)`
       sliderContainer.style.transform = `translateX(${position * step}px)`;
+      setTimeout(() => isEnabled = true, 600);
     }
     return currentSlide;
   }
