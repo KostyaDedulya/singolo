@@ -1,6 +1,5 @@
 window.onload = () => {
   addMenuActiveLinksHandler();
-  addScrollChangeOnHashChange();
   addPhoneDisplayHandler();
   addPortfolioFilterHandler();
   addPortfolioItemHandler();
@@ -15,13 +14,6 @@ const addMenuActiveLinksHandler = () => {
       menuLinks.forEach(link => link.classList.remove('menu_active'));
       event.target.classList.add('menu_active');
     })
-  });
-}
-
-const addScrollChangeOnHashChange = () => {
-  window.addEventListener('hashchange', (event) => {
-    if (location.hash === '#contacts') return;
-    window.scrollBy(0, -75);
   });
 }
 
