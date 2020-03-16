@@ -772,6 +772,11 @@ input[type="email"]:focus:invalid {
   color: #d6564f;
 }
 
+.modal__message,
+.modal__subject {
+  word-wrap: break-word;
+}
+
 
 @-moz-document url-prefix() {
   .menu__item {

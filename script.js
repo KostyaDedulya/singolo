@@ -70,9 +70,7 @@ const addModalWindowContactFormHandler = () => {
     let subject = document.querySelector('.contacts__form__subject').value;
     let message = document.querySelector('.contacts__form__message').value;
     subject = subject ? `Тема: ${subject}` : `Нет темы`;
-    message = message ? `Описание: ${message}` : `Нет описания`;
-
-    
+    message = message ? `Описание: ${message}` : `Нет описания`;    
     let modal = createModal(subject, message);
     document.body.append(modal);
     closeModal(modal);
