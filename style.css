@@ -169,6 +169,10 @@ section {
   z-index: 0;
 }
 
+.phone > img {
+  cursor: pointer;
+}
+
 .phone_vertical {
   top: 53px;
   left: 112px;
@@ -190,6 +194,7 @@ section {
   background-color: #000;
   width: 188px;
   height: 333px;
+  cursor: pointer;
 }
 
 .phone_vertical .phone__display {
@@ -379,14 +384,15 @@ section {
 }
 
 .portfolio__item {
-  margin-right: 6px;
-  margin-bottom: 6px;
-  border: 5px solid transparent;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  /* border: 5px solid transparent; */
   cursor: pointer;
 }
 
 .portfolio__item_active {
-  border-color: #F06C64;
+  outline: 5px solid #F06C64;
+  outline-offset: -5px;
 }
 
 .portfolio__item:nth-child(4n) {
@@ -658,7 +664,6 @@ input[type="email"]:focus:invalid {
   height: 12px;
   background-image: url(./assets/img/contacts/map_icon.png);
   background-repeat: no-repeat;
-  cursor: ;
 }
 
 .contacts__information__phone {

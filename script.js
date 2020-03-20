@@ -1,5 +1,6 @@
 window.onload = () => {
   addMenuActiveLinksHandler();
+  addMenuScrollHandler();
   addPhoneDisplayHandler();
   addPortfolioFilterHandler();
   addPortfolioItemHandler();
@@ -17,6 +18,33 @@ const addMenuActiveLinksHandler = () => {
   });
 }
 
+const addMenuScrollHandler = () => {
+  const sections = document.querySelectorAll('section');
+  const menuLinks = document.querySelectorAll('.menu__link');
+  document.addEventListener('scroll', (event) => {
+      let cursorPositionY = window.scrollY + 75;
+      sections.forEach(item => {
+        if (item.offsetTop <= cursorPositionY && (item.offsetTop + item.offsetHeight) > cursorPositionY) {
+          menuLinks.forEach(link => {
+            link.classList.remove('menu_active');
+            if (item.getAttribute('id') === link.getAttribute('href').substring(1)) {
+              link.classList.add('menu_active');
+            } else if (item.getAttribute('id') === 'slider' && link.getAttribute('href') === '#') {
+              link.classList.add('menu_active');
+            } else if (cursorPositionY + 1 >= document.documentElement.scrollHeight - document.documentElement.clientHeight && link.getAttribute('href') === '#contacts') {
+              menuLinks.forEach(link => {
+                link.classList.remove('menu_active');
+              })
+              link.classList.add('menu_active');
+            }
+          })
+        }
+      })
+    }
+  )
+}
+
+
 const addPhoneDisplayHandler = () => {
   const phones = document.querySelectorAll('.phone');
   phones.forEach(phone => {
@@ -30,17 +58,19 @@ const addPhoneDisplayHandler = () => {
 
 const addPortfolioFilterHandler = () => {
   const filterTags = document.querySelectorAll('.portfolio__filter__tag');
-  const portfolioItems = document.querySelectorAll('.portfolio__item');
+  const portfolioItems = Array.from(document.querySelectorAll('.portfolio__item'));
   const portfolioFilter = document.querySelector('.portfolio__filter');
-  let portfolioPhotos = [];
-  portfolioItems.forEach(item => portfolioPhotos.push(item.attributes.src.value));
+  const portfolioLayout = document.querySelector('.portfolio__layout');
   portfolioFilter.addEventListener('click', (event) => {
-    if (event.target.classList.contains('portfolio__filter__tag')) {
+    if (event.target.classList.contains('portfolio__filter__tag') && !event.target.classList.contains('portfolio__filter__tag_active')) {
       filterTags.forEach(tag => tag.classList.remove('portfolio__filter__tag_active'));
       event.target.classList.add('portfolio__filter__tag_active');
-      portfolioPhotos.sort(() => Math.random() - 0.5);
-      portfolioItems.forEach((item, i) => {
-        item.setAttribute('src', portfolioPhotos[i]);
+      portfolioItems.unshift(portfolioItems.pop());
+      while (portfolioLayout.firstElementChild) {
+        portfolioLayout.removeChild(portfolioLayout.firstElementChild);
+      }
+      portfolioItems.forEach(item => {
+        portfolioLayout.append(item);
       })
     }
   })
@@ -62,9 +92,10 @@ const addModalWindowContactFormHandler = () => {
     let subject = document.querySelector('.contacts__form__subject').value;
     let message = document.querySelector('.contacts__form__message').value;
     subject = subject ? `Тема: ${subject}` : `Нет темы`;
-    message = message ? `Описание: ${message}` : `Нет описания`;    
+    message = message ? `Описание: ${message}` : `Нет описания`;
     let modal = createModal(subject, message);
     document.body.append(modal);
+    document.contacts__form.reset();
     closeModal(modal);
   });
 }
@@ -75,11 +106,15 @@ const createModal = (subject, message) => {
   let template = `
   <div class="modal">
     <h3 class="modal__sent">Письмо отправлено</h3>
-    <p class="modal__subject">${subject}</p>
-    <p class="modal__message">${message}</p>
+    <p class="modal__subject"></p>
+    <p class="modal__message"></p>
     <button class="modal_close">OK</button>
   </div>`;
   layout.innerHTML = template;
+  const divSubject = layout.querySelector('.modal__subject');
+  const divMessage = layout.querySelector('.modal__message');
+  divSubject.innerText = subject;
+  divMessage.innerText = message;
   return layout;
 }
 
@@ -99,18 +134,18 @@ const addSliderHandler = () => {
   let currentSlide = 0;
   let position = 0;
   leftArrow.addEventListener('click', (event) => {
-    if(!isEnabled) return false;
+    if (!isEnabled) return false;
     isEnabled = false;
-    currentSlide = slideTransform('left', currentSlide, slides);    
+    currentSlide = slideTransform('left', currentSlide, slides);
   })
   rightArrow.addEventListener('click', (event) => {
-    if(!isEnabled) return false;
+    if (!isEnabled) return false;
     isEnabled = false;
     currentSlide = slideTransform('right', currentSlide, slides);
   })
 
-  const slideTransform = (direction, currentSlide, slides) => {    
-    if (direction === 'left') {      
+  const slideTransform = (direction, currentSlide, slides) => {
+    if (direction === 'left') {
       position--;
       if (currentSlide - 1 < 0) currentSlide = slides.length - 1;
       else currentSlide = currentSlide - 1;
