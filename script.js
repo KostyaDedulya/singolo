@@ -6,6 +6,7 @@ window.onload = () => {
   addPortfolioItemHandler();
   addModalWindowContactFormHandler();
   addSliderHandler();
+  burgerMenuHandler();
 }
 
 const addMenuActiveLinksHandler = () => {
@@ -22,26 +23,25 @@ const addMenuScrollHandler = () => {
   const sections = document.querySelectorAll('section');
   const menuLinks = document.querySelectorAll('.menu__link');
   document.addEventListener('scroll', (event) => {
-      let cursorPositionY = window.scrollY + 75;
-      sections.forEach(item => {
-        if (item.offsetTop <= cursorPositionY && (item.offsetTop + item.offsetHeight) > cursorPositionY) {
-          menuLinks.forEach(link => {
-            link.classList.remove('menu_active');
-            if (item.getAttribute('id') === link.getAttribute('href').substring(1)) {
-              link.classList.add('menu_active');
-            } else if (item.getAttribute('id') === 'slider' && link.getAttribute('href') === '#') {
-              link.classList.add('menu_active');
-            } else if (cursorPositionY + 1 >= document.documentElement.scrollHeight - document.documentElement.clientHeight && link.getAttribute('href') === '#contacts') {
-              menuLinks.forEach(link => {
-                link.classList.remove('menu_active');
-              })
-              link.classList.add('menu_active');
-            }
-          })
-        }
-      })
-    }
-  )
+    let cursorPositionY = window.scrollY + 75;
+    sections.forEach(item => {
+      if (item.offsetTop <= cursorPositionY && (item.offsetTop + item.offsetHeight) > cursorPositionY) {
+        menuLinks.forEach(link => {
+          link.classList.remove('menu_active');
+          if (item.getAttribute('id') === link.getAttribute('href').substring(1)) {
+            link.classList.add('menu_active');
+          } else if (item.getAttribute('id') === 'slider' && link.getAttribute('href') === '#') {
+            link.classList.add('menu_active');
+          } else if (cursorPositionY + 1 >= document.documentElement.scrollHeight - document.documentElement.clientHeight && link.getAttribute('href') === '#contacts') {
+            menuLinks.forEach(link => {
+              link.classList.remove('menu_active');
+            })
+            link.classList.add('menu_active');
+          }
+        })
+      }
+    })
+  })
 }
 
 
@@ -130,7 +130,7 @@ const addSliderHandler = () => {
   const leftArrow = document.querySelector('.slider__button_left');
   const rightArrow = document.querySelector('.slider__button_right');
   const sliderContainer = document.querySelector('.slider__container');
-  let step = sliderContainer.offsetWidth;
+
   let currentSlide = 0;
   let position = 0;
   leftArrow.addEventListener('click', (event) => {
@@ -145,6 +145,7 @@ const addSliderHandler = () => {
   })
 
   const slideTransform = (direction, currentSlide, slides) => {
+    let step = sliderContainer.offsetWidth;
     if (direction === 'left') {
       position--;
       if (currentSlide - 1 < 0) currentSlide = slides.length - 1;
@@ -163,4 +164,29 @@ const addSliderHandler = () => {
     }
     return currentSlide;
   }
+}
+
+const burgerMenuHandler = () => {
+  const burgerButton = document.querySelector('.burger_button');
+  const mobileMenuBG = document.querySelector('.header__mobile_background');
+  const menuItems = document.querySelectorAll('.menu__item');
+
+  burgerButton.addEventListener('click', drawMenu);
+  mobileMenuBG.addEventListener('click', drawMenu);
+  menuItems.forEach(menuItem => {
+    menuItem.addEventListener('click', drawMenu);
+  })
+
+}
+
+const drawMenu = () => {
+  const burgerButton = document.querySelector('.burger_button');
+  const menu = document.querySelector('.menu');
+  const logo = document.querySelector('.logo');
+  const mobileMenuBG = document.querySelector('.header__mobile_background');
+
+  burgerButton.classList.toggle('burger_button_active');
+  menu.classList.toggle('menu_active');
+  logo.classList.toggle('logo_to-left');
+  mobileMenuBG.classList.toggle('header__mobile_background_active');
 }
