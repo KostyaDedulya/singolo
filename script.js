@@ -95,7 +95,6 @@ const addModalWindowContactFormHandler = () => {
     message = message ? `Описание: ${message}` : `Нет описания`;
     let modal = createModal(subject, message);
     document.body.append(modal);
-    document.contacts__form.reset();
     closeModal(modal);
   });
 }
@@ -120,7 +119,8 @@ const createModal = (subject, message) => {
 
 const closeModal = (modal) => {
   modal.querySelector('.modal_close').addEventListener('click', (event) => {
-    modal.remove();
+    modal.remove();    
+    document.contacts__form.reset();
   })
 }
 

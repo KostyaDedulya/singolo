@@ -1027,10 +1027,14 @@ input[type="email"]:focus:invalid {
   }
 
   .logo {
-    padding: 14px 0;
+    padding: 13px 0;
     margin: 0;
     z-index: 9;
     transition: 0.5s linear;
+  }
+
+  .logo__link{
+    font-size: 20px;
   }
 
   .logo_to-left {
@@ -1199,5 +1203,9 @@ input[type="email"]:focus:invalid {
     transform: scale(0.265);
     top: -118px;
     left: -7%;
+  }
+
+  .logo_to-left {
+    transform: translateX(-35%);
   }
 }
